@@ -71,11 +71,3 @@ function setupEventListeners() {
             e.preventDefault();
             btn.click();
         });
-    });
-}
-
-// ============================================
-// GAME CONTROL FUNCTIONS
-// ============================================
-
-function startGame(selected
