@@ -1,0 +1,351 @@
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #1a1a2e;
+    font-family: 'Courier New', monospace;
+    color: #00ff00;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* ============================================
+   MENU UTAMA
+   ============================================ */
+#menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+}
+
+.nokia-logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.nokia-logo h1 {
+    font-size: 48px;
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+}
+
+.nokia-logo p {
+    font-size: 18px;
+    color: #666;
+    letter-spacing: 3px;
+}
+
+.level-selection {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.level-selection h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #00ff00;
+}
+
+.level-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 200px;
+    padding: 15px 30px;
+    margin: 10px auto;
+    font-size: 20px;
+    font-family: 'Courier New', monospace;
+    background: linear-gradient(145deg, #0f3460, #16213e);
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    color: #00ff00;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.level-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+}
+
+.level-icon {
+    font-size: 24px;
+}
+
+.high-score-display {
+    background: rgba(0, 255, 0, 0.1);
+    padding: 15px 30px;
+    border-radius: 10px;
+    border: 1px solid #00ff00;
+}
+
+.high-score-display p {
+    font-size: 20px;
+    color: #00ff00;
+}
+
+/* ============================================
+   AREA GAME
+   ============================================ */
+#game-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+}
+
+.game-header {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.score-box {
+    background: rgba(0, 255, 0, 0.1);
+    padding: 15px 30px;
+    border-radius: 10px;
+    border: 2px solid #00ff00;
+    text-align: center;
+}
+
+.score-box .label {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.score-box span {
+    font-size: 28px;
+    font-weight: bold;
+    color: #00ff00;
+}
+
+.canvas-container {
+    position: relative;
+    border: 4px solid #00ff00;
+    border-radius: 10px;
+    padding: 10px;
+    background: #000;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.3);
+}
+
+#game-canvas {
+    display: block;
+    background: #000;
+    border-radius: 5px;
+}
+
+/* ============================================
+   KONTROL
+   ============================================ */
+.controls-hp {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.control-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.control-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    background: linear-gradient(145deg, #0f3460, #16213e);
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    color: #00ff00;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+.control-btn:active {
+    transform: scale(0.95);
+    background: linear-gradient(145deg, #16213e, #0f3460);
+}
+
+.controls-pc {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.controls-pc p {
+    color: #666;
+    font-size: 14px;
+}
+
+.reset-btn {
+    margin-top: 20px;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-family: 'Courier New', monospace;
+    background: #e94560;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+    background: #c0354c;
+    transform: scale(1.05);
+}
+
+/* ============================================
+   OVERLAY GAME OVER
+   ============================================ */
+#game-over-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.overlay-content {
+    text-align: center;
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+    padding: 40px;
+    border-radius: 20px;
+    border: 3px solid #00ff00;
+    box-shadow: 0 0 50px rgba(0, 255, 0, 0.5);
+}
+
+.overlay-content h2 {
+    font-size: 36px;
+    color: #e94560;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #e94560;
+}
+
+.overlay-content p {
+    font-size: 20px;
+    color: #00ff00;
+    margin: 10px 0;
+}
+
+.overlay-content span {
+    font-weight: bold;
+}
+
+.play-again-btn {
+    margin-top: 20px;
+    padding: 15px 40px;
+    font-size: 18px;
+    font-family: 'Courier New', monospace;
+    background: #00ff00;
+    border: none;
+    border-radius: 10px;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.play-again-btn:hover {
+    background: #00cc00;
+    transform: scale(1.05);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+    .nokia-logo h1 {
+        font-size: 36px;
+    }
+
+    .level-btn {
+        width: 180px;
+        padding: 12px 25px;
+        font-size: 18px;
+    }
+
+    .score-box {
+        padding: 10px 20px;
+    }
+
+    .score-box span {
+        font-size: 24px;
+    }
+
+    #game-canvas {
+        width: 90vw;
+        height: 90vw;
+        max-width: 360px;
+        max-height: 360px;
+    }
+
+    .control-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .overlay-content {
+        padding: 30px;
+        margin: 20px;
+    }
+
+    .overlay-content h2 {
+        font-size: 28px;
+    }
+
+    .overlay-content p {
+        font-size: 18px;
+    }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(0, 255, 0, 0.5); }
+    50% { box-shadow: 0 0 40px rgba(0, 255, 0, 0.8); }
+}
+
+.level-btn:hover {
+    animation: pulse 1s ease-in-out infinite;
+}
+
+#game-canvas {
+    animation: glow 2s ease-in-out infinite;
+}
