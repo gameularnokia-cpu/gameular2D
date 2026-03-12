@@ -96,11 +96,18 @@ body {
     padding: 15px 30px;
     border-radius: 10px;
     border: 1px solid #00ff00;
+    margin-bottom: 20px;
 }
 
 .high-score-display p {
     font-size: 20px;
     color: #00ff00;
+}
+
+.instructions {
+    color: #666;
+    font-size: 14px;
+    text-align: center;
 }
 
 /* ============================================
@@ -190,16 +197,6 @@ body {
 .control-btn:active {
     transform: scale(0.95);
     background: linear-gradient(145deg, #16213e, #0f3460);
-}
-
-.controls-pc {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.controls-pc p {
-    color: #666;
-    font-size: 14px;
 }
 
 .reset-btn {
