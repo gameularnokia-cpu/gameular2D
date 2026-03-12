@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Permainan Ular Nokia 2D - Game klasik dengan berbagai tingkatan kesulitan">
+    <meta name="theme-color" content="#000000">
+    <title>Permainan Ular Nokia 2D</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Menu Utama -->
+    <div id="menu">
+        <div class="nokia-logo">
+            <h1>🐍 SNAKE</h1>
+            <p>Nokia Style Game</p>
+        </div>
+        <div class="level-selection">
+            <h2>Pilih Tingkatan:</h2>
+            <button class="level-btn" onclick="startGame(1)">
+                <span class="level-icon">🟢</span> Mudah
+            </button>
+            <button class="level-btn" onclick="startGame(2)">
+                <span class="level-icon">🟡</span> Normal
+            </button>
+            <button class="level-btn" onclick="startGame(3)">
+                <span class="level-icon">🔴</span> Susah
+            </button>
+        </div>
+        <div class="high-score-display">
+            <p>High Score: <span id="menu-high-score">0</span></p>
+        </div>
+    </div>
+
+    <!-- Area Game -->
+    <div id="game-area" style="display: none;">
+        <!-- Header Score -->
+        <div class="game-header">
+            <div class="score-box">
+                <span class="label">SKOR</span>
+                <span id="current-score">0</span>
+            </div>
+            <div class="score-box">
+                <span class="label">HIGH</span>
+                <span id="high-score">0</span>
+            </div>
+        </div>
+
+        <!-- Canvas Game -->
+        <div class="canvas-container">
+            <canvas id="game-canvas" width="400" height="400"></canvas>
+        </div>
+
+        <!-- Kontrol HP -->
+        <div class="controls-hp">
+            <button class="control-btn" id="btn-up" aria-label="Atas">▲</button>
+            <div class="control-row">
+                <button class="control-btn" id="btn-left" aria-label="Kiri">◀</button>
+                <button class="control-btn" id="btn-down" aria-label="Bawah">▼</button>
+                <button class="control-btn" id="btn-right" aria-label="Kanan">▶</button>
+            </div>
+        </div>
+
+        <!-- Kontrol PC -->
+        <div class="controls-pc">
+            <div class="control-info">
+                <p>Gunakan tombol panah keyboard</p>
+            </div>
+        </div>
+
+        <!-- Tombol Reset -->
+        <button class="reset-btn" onclick="resetGame()">🔄 Reset Game</button>
+    </div>
+
+    <!-- Overlay Game Over -->
+    <div id="game-over-overlay" style="display: none;">
+        <div class="overlay-content">
+            <h2>🎮 GAME OVER</h2>
+            <p>Skor Akhir: <span id="final-score">0</span></p>
+            <p>High Score: <span id="final-high-score">0</span></p>
+            <button class="play-again-btn" onclick="showMenu()">🏠 Menu Utama</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
